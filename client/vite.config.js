@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
     plugins: [react()],
     server: {
-        port: 5173,
+        host: '0.0.0.0',
+        port: parseInt(process.env.PORT, 10) || 5173,
         proxy: {
             '/api': {
                 target: 'https://tastelab-mqir.onrender.com',
