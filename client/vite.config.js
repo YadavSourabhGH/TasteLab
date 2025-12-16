@@ -16,6 +16,6 @@ export default defineConfig({
                 ws: true
             }
         },
-        allowedHosts: 'https://tastelab-collab.onrender.com/'
+        allowedHosts: ['tastelab-collab.onrender.com']
     }
 })
