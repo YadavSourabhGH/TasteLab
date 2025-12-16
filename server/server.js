@@ -19,7 +19,7 @@ const server = http.createServer(app);
 // Socket.IO setup
 const io = new Server(server, {
     cors: {
-        origin: process.env.CLIENT_URL || 'http://localhost:5173',
+        origin: '*',
         methods: ['GET', 'POST'],
         credentials: true
     }
@@ -27,7 +27,7 @@ const io = new Server(server, {
 
 // Middleware
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: '*',
     credentials: true
 }));
 app.use(express.json());
@@ -57,13 +57,13 @@ const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
     console.log(`
-╔════════════════════════════════════════════╗
-║                                            ║
-║   🍳 TasteLab Server Running               ║
-║                                            ║
-║   Port: ${PORT}                              ║
-║   Mode: ${process.env.NODE_ENV || 'development'}                     ║
-║                                            ║
-╚════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║   TasteLab Server Running                                        ║
+║                                                                  ║
+║   Port: ${PORT}                                                  ║
+║   Mode: ${process.env.NODE_ENV || 'development'}                 ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
   `);
 });

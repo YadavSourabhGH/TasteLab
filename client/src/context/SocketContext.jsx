@@ -20,7 +20,7 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         if (isAuthenticated && token) {
-            const newSocket = io('http://localhost:5001', {
+            const newSocket = io('https://tastelab-mqir.onrender.com', {
                 auth: { token }
             });
 

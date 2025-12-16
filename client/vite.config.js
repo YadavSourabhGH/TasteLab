@@ -7,11 +7,11 @@ export default defineConfig({
         port: 5173,
         proxy: {
             '/api': {
-                target: 'http://localhost:5001',
+                target: 'https://tastelab-mqir.onrender.com',
                 changeOrigin: true
             },
             '/socket.io': {
-                target: 'http://localhost:5001',
+                target: 'https://tastelab-mqir.onrender.com',
                 ws: true
             }
         }
